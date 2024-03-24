@@ -1,0 +1,32 @@
+﻿@{
+    Layout = "_LoginLayout";
+}
+
+<div class="card">
+    <div class="card-header">
+        <h3>Login</h3>
+    </div>
+    <div class="card-body">
+
+        @if (ViewBag.Error != null)
+        {
+            <div class="alert alert-danger">
+                User tidak ditemukan atau password salah.
+            </div>
+        }
+
+        <form method="post" action="Login">
+            <label>Username</label>
+            <input type="text" name="Username"
+                   class="form-control" />
+
+            <label>Password</label>
+            <input type="password" name="Password"
+                   class="form-control" />
+
+            <button type="submit" class="btn btn-primary">
+                Login
+            </button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+﻿@model List<Post>
+
+<a href="/post/create" class="btn btn-success">
+    Tambah Post
+</a>
+@foreach (var post in @Model)
+{
+    <div class="card mb-5">
+        <div class="card-header">
+            <h2>@post.Title</h2>
+        </div>
+        <div class="card-body">
+            <p>@post.Content</p>
+
+            <a href="/post/detail/@post.Id" class="btn btn-warning">Detail</a>
+            <a href="/post/edit/@post.Id" class="btn btn-primary">Edit</a>
+            <a href="/post/delete/@post.Id" class="btn btn-danger">Delete</a>
+        </div>
+    </div>
+}
+
+<a href="/post/index?page=@ViewBag.NextPage"
+   class="btn btn-primary">Selanjutnya</a>
+
+<span>Mau ke halaman detail? </span>
+<a class="btn btn-primary"
+   asp-controller="Post"
+   asp-action="Detail">Klik di sini</a>
